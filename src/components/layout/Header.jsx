@@ -11,19 +11,21 @@ const Header = ({ currentPath, onNavigate }) => {
     onNavigate(path);
   };
 
+  const linkBaseClasses = 'relative text-sm uppercase tracking-wide transition-colors';
+
   return (
-    <header className="sticky top-0 z-40 bg-gradient-to-r from-[#190712]/95 via-[#2b0a1f]/95 to-[#3c0b21]/95 backdrop-blur-md border-b border-[#FF3B63]/30">
+    <header className="sticky top-0 z-40 bg-[#121F45]/90 backdrop-blur-sm border-b border-[#22397120]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between py-4">
           <a
             href="/"
             onClick={(event) => handleNavigate(event, '/')}
-            className="text-2xl font-semibold text-white tracking-wide"
+            className="font-mono text-xl font-bold text-[#FFC906]"
           >
             Jagriti Jain
           </a>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-8">
             {navSections.map((section) => {
               const isActive = currentPath === section.path;
               return (
@@ -31,13 +33,13 @@ const Header = ({ currentPath, onNavigate }) => {
                   key={section.id}
                   href={section.path}
                   onClick={(event) => handleNavigate(event, section.path)}
-                  className={`relative text-sm uppercase tracking-wide transition-colors ${
-                    isActive ? 'text-[#FF6B8D]' : 'text-gray-200 hover:text-[#FF6B8D]'
+                  className={`${linkBaseClasses} ${
+                    isActive ? 'text-[#CC1E4A]' : 'text-gray-200 hover:text-[#FFC906]'
                   }`}
                 >
                   {section.label}
                   {isActive && (
-                    <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#FF6B8D] rounded-full" />
+                    <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#CC1E4A] rounded-full" />
                   )}
                 </a>
               );
@@ -56,7 +58,7 @@ const Header = ({ currentPath, onNavigate }) => {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-[#FF3B63]/30 bg-[#1a0a15]/95 backdrop-blur-xl">
+        <div className="md:hidden border-t border-[#22397120] bg-[#121F45]">
           <div className="px-4 py-4 space-y-2">
             {navSections.map((section) => (
               <a
@@ -65,8 +67,8 @@ const Header = ({ currentPath, onNavigate }) => {
                 onClick={(event) => handleNavigate(event, section.path)}
                 className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   currentPath === section.path
-                    ? 'bg-[#FF6B8D]/20 text-[#FF6B8D]'
-                    : 'text-gray-200 hover:bg-[#FF6B8D]/10'
+                    ? 'bg-[#223971]/40 text-[#FFC906]'
+                    : 'text-gray-200 hover:bg-[#223971]/30'
                 }`}
               >
                 {section.label}

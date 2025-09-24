@@ -14,7 +14,7 @@ const CodeBlock = ({ code, language, title }) => {
     <div className="mt-4">
       {title && <h4 className="text-sm font-semibold text-white mb-2">{title}</h4>}
       <div className="relative">
-        <pre className="bg-[#1a1029] rounded-xl p-4 overflow-x-auto text-sm border border-[#FF3B63]/20">
+        <pre className="bg-[#0d1629] rounded-xl p-4 overflow-x-auto text-sm border border-[#22397130]">
           <code className="text-gray-100 font-mono whitespace-pre">{code}</code>
         </pre>
         <button

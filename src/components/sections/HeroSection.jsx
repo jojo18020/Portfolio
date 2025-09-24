@@ -8,34 +8,34 @@ const HeroSection = () => {
   const [typingText, setTypingText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
 
-  useEffect(() => {
-    const text = 'whoami';
-    let index = 0;
+  // useEffect(() => {
+  //   const text = 'whoami';
+  //   let index = 0;
 
-    const typingTimer = setInterval(() => {
-      if (index < text.length) {
-        setTypingText(text.slice(0, index + 1));
-        index += 1;
-      } else {
-        clearInterval(typingTimer);
-      }
-    }, 150);
+  //   const typingTimer = setInterval(() => {
+  //     if (index < text.length) {
+  //       setTypingText(text.slice(0, index + 1));
+  //       index += 1;
+  //     } else {
+  //       clearInterval(typingTimer);
+  //     }
+  //   }, 150);
 
-    const cursorTimer = setInterval(() => {
-      setShowCursor((prev) => !prev);
-    }, 500);
+  //   const cursorTimer = setInterval(() => {
+  //     setShowCursor((prev) => !prev);
+  //   }, 500);
 
-    return () => {
-      clearInterval(typingTimer);
-      clearInterval(cursorTimer);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(typingTimer);
+  //     clearInterval(cursorTimer);
+  //   };
+  // }, []);
 
   return (
     <section className="pb-16">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <TerminalPrompt command="whoami" typingText={typingText} showCursor={showCursor} />
+           <TerminalPrompt command="whoami" />
           <h1 className="text-4xl lg:text-6xl font-bold mb-4 font-mono leading-tight">
             Jagriti <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF3B63] to-[#FF9AAE]">{heroContent.titleHighlight}</span> Jain
           </h1>
