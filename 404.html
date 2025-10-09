@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content="0; url=/Portfolio/" />
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      // Redirect any GH Pages 404s back to the app
+      const redirect = window.location.pathname.replace('/Portfolio', '');
+      if (redirect !== '/') window.location.replace('/Portfolio' + redirect);
+    </script>
+  </body>
+</html>
